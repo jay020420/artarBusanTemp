@@ -1,0 +1,5 @@
+﻿<resources>
+    <string name="app_name">ArtAR Busan</string>
+    <string name="marker_searching">마커 탐색 중</string>
+    <string name="marker_found">마커 인식 성공</string>
+</resources>
