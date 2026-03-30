@@ -4,6 +4,10 @@
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+configurations.all {
+    exclude(group = "com.android.support")
+}
+
 android {
     namespace = "com.artar.busan"
     compileSdk = 34
@@ -60,7 +64,9 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 
     implementation("com.google.ar:core:1.46.0")
-    implementation("com.google.ar.sceneform.ux:sceneform-ux:1.17.1")
+    implementation("com.google.ar.sceneform.ux:sceneform-ux:1.17.1") {
+        exclude(group = "com.android.support")
+    }
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")

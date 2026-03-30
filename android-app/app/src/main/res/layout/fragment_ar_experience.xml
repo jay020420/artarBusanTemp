@@ -1,15 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/arFragmentHost"
-        android:name="com.google.ar.sceneform.ux.ArFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingClass" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +20,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:text="Event" />
+            android:text="@string/selected_event" />
 
         <TextView
             android:id="@+id/markerStatusText"
@@ -49,7 +45,7 @@
                 android:id="@+id/applyLanguageBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="적용" />
+                android:text="@string/apply_label" />
         </LinearLayout>
     </LinearLayout>
 

@@ -76,7 +76,13 @@ class ArExperienceFragment : Fragment() {
             Toast.makeText(requireContext(), "언어 변경", Toast.LENGTH_SHORT).show()
         }
 
-        val arHost = childFragmentManager.findFragmentById(R.id.arFragmentHost) as ArFragment
+        val arHost = (childFragmentManager.findFragmentById(R.id.arFragmentHost) as? ArFragment)
+            ?: ArFragment().also {
+                childFragmentManager.beginTransaction()
+                    .replace(R.id.arFragmentHost, it)
+                    .commitNow()
+            }
+
         arHost.setOnSessionConfigurationListener { session, _ ->
             session.configure(MarkerDatabaseFactory.configure(session))
         }

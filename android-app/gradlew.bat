@@ -1,0 +1,18 @@
+@ECHO OFF
+set DIRNAME=%~dp0
+if "%DIRNAME%"=="" set DIRNAME=.
+set APP_BASE_NAME=%~n0
+set APP_HOME=%DIRNAME%
+
+set DEFAULT_JVM_OPTS=
+
+set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+
+"%JAVA_HOME%\bin\java.exe" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+if %ERRORLEVEL% equ 0 goto end
+
+if not "%ERRORLEVEL%"=="0" goto fail
+:fail
+exit /b 1
+:end
+exit /b 0
